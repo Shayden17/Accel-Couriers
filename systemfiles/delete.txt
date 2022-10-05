@@ -1,0 +1,1 @@
+drop table employees, payments, customers, ordertype, customerorders, items, delivery; 

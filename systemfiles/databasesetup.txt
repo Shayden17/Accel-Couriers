@@ -1,0 +1,92 @@
+    create table employees
+        (employeeid integer(9) not null auto_increment,
+        epgender varchar (6),
+        epfname varchar (30) not null,
+        eplname varchar (30),
+        epusername varchar (30) not null,
+        epassword varchar (100),
+        acctype varchar (9) not null,
+        eptelnum varchar (10),
+        epemail varchar (100), 
+        epsecurequestion varchar (100 ),
+        epanswer varchar (100),
+        primary key(employeeid)); 
+
+        insert into employees (epfname,epusername, epassword, acctype)
+        values('Admin','admin','$2y$10$weBFaZBahUpZYh4fjiphvOZr1DhXozy0JRS75mcBQX0y9vxvZuVoe','admin');
+        
+    create table customers
+        (custid int(9) not null auto_increment,
+        cusername varchar (30),
+        cpassword varchar (100),
+        custgender varchar (6),
+        cfname varchar (30) not null,
+        clname varchar (30) not null,
+        custelnum varchar (10),
+        custemail varchar (100),
+        custdob date not null,
+        accaddress varchar (100) not null,
+        acctown varchar (30) not null,
+        acccountry varchar (30) not null,
+        deladdress varchar (100),
+        deltown varchar (30),
+        delcountry varchar (30),
+        securequestion varchar (100 )not null,
+        answer varchar (100) not null,
+        primary key(custid));
+
+    create table ordertype 
+        (otype varchar (10),
+        typedescription varchar (70),
+        primary key(otype));   
+        
+    create table customerorders
+        (orderid int (10) not null auto_increment,
+        custid int (9) not null,
+        employeeid int (9),
+        orderdate datetime,
+        addinfo varchar (150), 
+        odelicate varchar (3),
+        itemqauntity int (3),
+        otype varchar(10) not null,
+        ostatus varchar (15),
+        totalprice float,
+        primary key (orderid),
+        foreign key (employeeid) references employees(employeeid),
+        foreign key (custid) references customers(custid) on delete cascade,
+        foreign key (otype) references ordertype(otype));
+
+
+    create table payments
+        (transid int (10) not null auto_increment,
+        orderid int (10) not null,
+        amount decimal (7,2),
+        receipt varchar (100) not null,
+        pstatus varchar (10),
+        primary key (transid),
+        foreign key (orderid) references customerorders(orderid) on delete cascade);
+
+        
+    create table items
+        (orderid int (10) not null, 
+        itemid int (11) not null auto_increment,
+        itemreference varchar (200) not null,
+        storename varchar (30) not null, 
+        itemname varchar (100) not null,
+        itemtype varchar (30) not null,
+        description varchar (100) ,
+        unitcost decimal,
+        dimensions varchar (20),
+        weight varchar (12),
+        primary key(itemid),
+        foreign key(orderid) references customerorders(orderid) on delete cascade);
+
+    create table delivery
+        (delnum int (10) not null auto_increment,
+        deliverydate date, 
+        dstatus varchar (30),
+        primary key(delnum));
+
+    insert into ordertype 
+        values ('Fast','Order is shipped and delivered in one week'),
+                ('Regular','Order is shipped with regular shipping and takes up to two weeks');
