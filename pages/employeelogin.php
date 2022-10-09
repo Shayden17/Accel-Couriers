@@ -9,17 +9,17 @@
     </head>
     <body>
             <main><!--MAIN CONTENT CONTAINER (MINUS FOOTER)-->
-                <header class = "lightheader fadeIn"><!--HEADER-->
+                <header class = "lightheader"><!--HEADER-->
                     <?php header_('','');?>
                 </header>
-                <page class ='animated FadeInRight'> <!--MAIN CONTENT ON PAGE (MINUS HEADER)-->
+                <page> <!--MAIN CONTENT ON PAGE (MINUS HEADER)-->
                     <div class = 'row'>        
                         <br><br><br>
-                            <div class = 'colleft'>
+                            <div class = 'col_width_60'>
                                 <br><br><br><br><br><br><br><br><br>
                                 <h1> &emsp;&emsp;&emsp;&emsp;&emsp;Employees Login </h1>
                             </div>
-                            <div class = 'colright'>
+                            <div class = 'col_width_40'>
                                 <div class = "box" id='loginbox'>
                                     <?php login('employees');?>
                                 </div>

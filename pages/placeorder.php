@@ -93,7 +93,7 @@
                             if (isset($_POST['submitorder'])){  //If submit order button is pressed 
                                 date_default_timezone_set("America/New_York"); //Set the date and time format
                                 $date = new DateTime(); //capture currennt date and time 
-                                $info1=array($_SESSION['id'],               //Insert first set of inforation into $info array
+                                $info1=array($_SESSION['id'],               //Insert first set of information into $info array
                                             $date->format('Y-m-d H:i:s'),
                                             mysqli_real_escape_string($con,$_POST['addinfo']),
                                             );

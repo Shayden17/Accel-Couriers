@@ -47,7 +47,7 @@
                                 if (!isset($_GET['edit'])){         //If edit is sent in the URL then call editorder() funtion otherwise table = 'items' and print itmes based on order info
                                     $result = printrecords($result,'items'); 
                                 }else{ 
-                                    $check= edititems($result);       //editorder()
+                                    editorder($result);       //editorder()
                                 }
                                 echo" 
                                 

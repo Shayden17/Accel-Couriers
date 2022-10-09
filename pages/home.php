@@ -12,18 +12,16 @@
             <header class = ' scrolled1 fadeIn'> <!--HEADER-->
                 <?php header_('nav','user');?>  
             </header>
-            <page class ='animated FadeInRight'> <!--MAIN CONTENT ON PAGE (MINUS HEADER)-->
-                <br><br><br><br><br><br>
-                <div class= 'row '>
-                    <div class = 'colleft' > <!--WELCOME MESSAGE-->
-                        <br><br>
-                        <h1 id= 'welcome'>The Fastest and Most Inclusive Courier Service in Trinidad And Tobago</h1>
-                        <p id='welcome'>We aim to make Online Shopping and Package Delivery easy, accessible, and efficient for everyone.<p>
+            <page> <!--MAIN CONTENT ON PAGE (MINUS HEADER)-->
+                <div class= row id = landingpage>
+                    <div class = col_width_60 > <!--WELCOME MESSAGE-->
+                        <h1>The Fastest and Most Inclusive Courier Service in Trinidad And Tobago</h1><br>
+                        <p>We aim to make Online Shopping and Package Delivery easy, accessible, and efficient for everyone.<p>
                         <br>
-                        &emsp; <button onclick = 'location.href="register.php"' class = 'submitbutton getstarted Getstarted'>Get Started</button>
+                        <button onclick = 'location.href="register.php"' id = getstarted class = animatedbutton>Get Started</button>
                     </div>  
-                    <div class = 'animated colright'>   <!--LANDING PAGE PICTURE-->
-                        <img src='../images/landingpage.png' id = 'homepageimg1' alt = 'Courier Clip Art'/>
+                    <div class = col_width_40 >   <!--LANDING PAGE PICTURE-->
+                        <img src='../images/landingpage.png' id = 'homepageimg' alt = 'Courier Clip Art'/>
                     </div>
                 </div>
             </page>

@@ -12,25 +12,20 @@
             <header class = ' scrolled1 fadeIn'> <!--HEADER-->
                 <?php header_('nav','user');?>  
             </header>
-            
-            <page class ='animated FadeInRight'> <!--MAIN CONTENT ON PAGE (MINUS HEADER)-->
-                <br>
+            <page> <!--MAIN CONTENT ON PAGE (MINUS HEADER)-->
                 <div class ='row'>
-                    <h1> Customer Registration <a href=home.php><button id = "registercancel" class = "submitbutton" ><i class = "fa fa-fw fa-ban"></i>Cancel</button></a></h1>
-                            
-                        <div class = 'box'  id = 'signupbox'>
-                            <p id="existingaccount"> Already have an Account? <a href ='login.php'><button class ='submitbutton'  id='loginsignup'>Log In</button></a> instead.</p>
-                            <h1> Sign Up </h2>
-                            </br>
-                            <?php register('customer');?>
-                            </br></br>
-                        </div>
+                    <h1> Customer Registration</h1>
+                    <div class = 'box'  id = 'signupbox'>
+                        <p id="existingaccount"> Already have an Account? <a class = submitbutton href ='login.php'>Log In</button></a> instead.</p>
+                        <?php register('customer');?>
+                    </div>
                 </div>
             </page>
         </main>
         <footer class="footer" > <!--FOOTER-->
             <?php footer_('contact');?>
         </footer>
+        <script src='jquery.js'></script>
     <body>
 </html>
 

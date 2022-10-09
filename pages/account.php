@@ -14,7 +14,8 @@
             </header>
             <page class ='animated FadeInRight'>  <!--MAIN CONTENT ON PAGE (MINUS HEADER)-->
                 <br><br><br>
-                <div  class = 'sidebar'>     <!--VERTICAL NAVIGATION BAR ON LEFT SIDE OF 'WINDOW'--><!--~ SIDEBAR--> 
+                <!--~ SIDEBAR--> 
+                <div  class = 'sidebar'>     <!--VERTICAL NAVIGATION BAR ON LEFT SIDE OF 'WINDOW'-->
                     <br><br>
                     <ul class = 'sidenav'>
                         <li><a id = 'account' href="?tab=account&window=acc">Account Information</a></li>
@@ -25,16 +26,20 @@
                         <li><a id = 'security' href="?tab=security&window=sec">Security Settings</a></li>
                     </ul>
                 </div>
-                
-                <div class = 'window'>  <!--'DIV WINDOW THAT DISPLAYS THE CONTENT BASE ON TAB VERITICAL NAVBAR SELECTION--><!--~ WINDOW-->
-                    <div id = 'acc' class = 'hide'> <!--~ ACCOUNT-->
+                <!--!~-->
+
+                <!--~ WINDOW-->
+                <div class = 'window'>  <!--'DIV WINDOW THAT DISPLAYS THE CONTENT BASE ON TAB VERITICAL NAVBAR SELECTION-->
+                    <?php 
+                        if (isset($_SESSION['acctype']))    //Depending on account type set the type of edit to be performed
+                            $type = 'emaccedit';
+                        else    
+                            $type = 'custedit';
+                    ?>
+                    <div id = 'acc' class = 'hide'> <!--~~ ACCOUNT-->
                             <?php
                                 if (isset($_GET['edit'])){ //If Edit button is pressed 
-                                    if (isset($_SESSION['acctype']))    //Depending on account type call function employeeedit or customer edit 
-                                       $return= accountedit('emedit','details');
-                                    else
-                                        $return= accountedit('custedit','details');  
-
+                                    $return = accountedit($type,'details')
                                     if ($return ==3)    //If function returns 3 then reload page without edit function 
                                         header('location:account.php?tab=account&window=acc');
                                 }else{                  //Else simply display account details 
@@ -43,10 +48,11 @@
                                 }
                             ?>
                     </div>
-                    <div id = 'sec' class ='hide'><!--~ SECURITY SETTINGS-->
+                    <div id = 'sec' class ='hide'>   <!--~ SECURITY SETTINGS-->
                         <h1>Security Settings</h1>
                         <?php 
-                            if (isset($_GET['pwchange'])){      //if "change Password Button is pressed
+                            //~~ if Change Password Button is pressed
+                            if (isset($_GET['pwchange'])){      
                                 if (isset($_POST['submit'])){   // If old and new passwords are suubmitted send the information to the changpassword() function
                                     $password=array(mysqli_real_escape_string($con,$_POST['current']),
                                                     mysqli_real_escape_string($con,$_POST['new']),
@@ -73,12 +79,13 @@
                                         <br><br>
                                     </form>
                                     <input type ='submit' form ='pwchange' name ='' class ='submitbutton' value ='Confirm'/>&emsp;&emsp;<a href='account.php?tab=security&window=sec'><input type ='submit' class ='submitbutton' value ='Cancel'/></a>";
-                            }elseif (isset($_GET['edit'])){ //If Edit Recovery information button is pressed call the accountedit() funtion
-                                if (isset($_SESSION['acctype']))
-                                    accountedit('emedit','security');
-                                else
-                                    accountedit('custedit','security');
-                            }else{ //Otherwise 'Show Change password' and 'Change Security information' buttons as well as the current security question & answer
+                            }
+                            //~~ If Edit Recovery information button is pressed 
+                            elseif (isset($_GET['edit'])){ 
+                                accountedit($type,'security');  //call the accountedit() funtion
+                            }
+                            //Otherwise 'Show Change password' and 'Change Security information' buttons as well as the current security question & answer
+                            else{ 
                                 echo 
                                     "<h3>Password:</h3>
                                     <a href='?tab=security&window=sec&pwchange'><button class ='submitbutton'>Change Password</button></a>
@@ -107,7 +114,7 @@
                         
                             }
                         ?>
-                    </div>
+                    </div><!--!~-->
                     <script type="text/javascript"> //Scrip to select what information shows in the window as long as highlighting the vertical navigation tab
                         function tab(t,win){
                             var win = win;
@@ -118,6 +125,7 @@
                         }
                     </script>
                 </div>
+                <!--!~-->
                 <div class = row></div>
             </page>
         </main> 

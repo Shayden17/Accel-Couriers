@@ -10,14 +10,14 @@
     <body>
         
         <main> <!--MAIN CONTENT CONTAINER (MINUS FOOTER)-->
-            <header class = ' lightheader fadeIn'> <!--HEADER-->
+            <header class = ' lightheader'> <!--HEADER-->
                 <?php header_('','');?>  
             </header>
-            <page class ='animated FadeInRight'>   <!--MAIN CONTENT ON PAGE (MINUS HEADER)-->
+            <page>   <!--MAIN CONTENT ON PAGE (MINUS HEADER)-->
                 <div class = 'row'>
                     <br><br><br><br>
                     <div class = "box" id='loginbox'>
-                       <?php login('customers'); ?>
+                       <?php login('customer'); ?>
                     </div>
                 </div>
             </page>

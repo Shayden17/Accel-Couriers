@@ -22,7 +22,7 @@
 				<?php	
 					if (databasecheck()==0){ 	//If database (And admin account) are not yet set up then Use 'system protection' for Setup //~~ First Time Login-->  
 						systemprotection();
-					}elseif ((datasecheck()==1)&&(!isset($_SESSION['acctype']))){ 		//Check to see if Tables in database have been created (By default an admin account is created with employee table)
+					}elseif ((databasecheck()==1)&&(!isset($_SESSION['acctype']))){ 		//Check to see if Tables in database have been created (By default an admin account is created with employee table)
 						header('location:employeelogin.php');	//Therefor if 'check()' Returns (1) and the SESSION account type is not set it would send back to employee login (Admin Must Then Log in Firstly)
 					}elseif ($_SESSION['acctype']=='non admin'){		// If Session account type is set but not manager or admin would simply go back to last URL (basically preventing access).
 						header("location:".$_SERVER['HTTP_REFERER']."");
