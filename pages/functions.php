@@ -381,7 +381,7 @@
                     else
                         $acctype = $_POST['acctype'];
                 }
-                if ((mysqi_real_escape_string($con,$_POST['password']))==(mysqli_real_escape_string($con,$_POST['confirmpassword']))){      //If the passwords entered are the same...
+                if ((mysqli_real_escape_string($con,$_POST['password']))==(mysqli_real_escape_string($con,$_POST['confirmpassword']))){      //If the passwords entered are the same...
                     $password= mysqli_real_escape_string($con, $_POST['password']);
                     $info= array($gender= $_POST['gender'],           //Initialize the array with the main account fields 
                                 mysqli_real_escape_string($con, $_POST['firstname']), 

@@ -17,7 +17,7 @@
                     <h1> Customer Registration</h1>
                     <div class = 'box'  id = 'signupbox'>
                         <p id="existingaccount"> Already have an Account? <a class = submitbutton href ='login.php'>Log In</button></a> instead.</p>
-                        <?php register('customer');?>
+                        <?php register('customers');?>
                     </div>
                 </div>
             </page>
