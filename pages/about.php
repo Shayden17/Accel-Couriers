@@ -23,7 +23,7 @@
 
                     	At Accel Couriers we make online shopping easy for you, our customers, by handling the entire process of the online  purchase and delivery to you. Simply send us the link of the item, and once approved, pay by direct deposit to our bank account either online or with cash at yo6ur bank of choice.
 
-                        end
+                        
 
             		</p>
 				</div>
