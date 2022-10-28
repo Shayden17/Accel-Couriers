@@ -27,10 +27,28 @@
 
             		</p>
 				</div>
-            
-				<h1>
-            	Our services 
-            	</h1>
+                <div class ="row">
+                    <h1>
+            	        Our services 
+            	    </h1>
+            	    <h3>Online Product Purchace, Shipping, And delivery</h3>
+            	    <p> We handle the entire online transaction and shipping process for you. Simply send us the website link for the product you would like to purchace along with the quantity and any other specifcations. Our team will vet your order within 24-48 hours and let you knkw by email if the order has been apporoved. </br>
+            	        Once approved, you can then make a deposit to our <a>bank account</a> by online transfer or over the counter.</br>
+            	        We then purchase the product and have it delivered to you within 2-4 weeks.</p>
+            	   </br></br>
+            	   <h3>Additional Services:</h3>
+            	    <ul>
+            	        <li>Order Tracking</li>
+            	        <li>Options for expidite shipping</li>
+            	    </ul>
+            	    <h3>Local Courier Services (Package Delivery)</h3>
+            	    <p>We offer a local logistics and package delivery (Trinidad and Tobago) service for individual and business purposes. </p>
+            	    <ul>
+            	        <li>Remote Package Pickup</li>
+            	        <li> Specify your pickup time (Up to 2 pm)</li>
+            	    </ul>
+                </div>
+
             </page>
         </main>
         <footer><!--FOOTER--> 
